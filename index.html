@@ -37,7 +37,7 @@
         <div class="quote" id="quote">Loading verse...</div>
     </div>
 
-    <script>
+        <script>
         const verses = [
             { quote: "Be strong and take heart, all you who hope in the Lord. — Psalm 31:24", 
               reference: "Psalm 31:24" },
@@ -69,48 +69,40 @@
 
 
     
-<script>
-  // List of all ad scripts with different zones
-  var adScripts = [
-    'https://alwingulla.com/88/tag.min.js" data-zone="112447',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112446',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112445',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112444',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112443',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112440',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112441',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112442',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112436',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112437',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112438',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112439',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112432',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112433',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112434',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112435',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112412',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112429',
-    'https://alwingulla.com/88/tag.min.js" data-zone="112431'
-  ];
+  <!-- Ad Script -->
+      <!-- Section to display the loaded zone ID -->
+    <section id="zone-info">
+        <p id="zone-message"></p>
+    </section>
+    
+    <script>
+        // Define an array of data-zone IDs
+        const zoneIds = ['112444', '112445', '112446', '112447', '112448'];
 
-  // Randomly select one ad script from the list
-  var randomIndex = Math.floor(Math.random() * adScripts.length);
-  var selectedAdScript = adScripts[randomIndex];
+        // Randomly select a zone ID from the array
+        const randomZoneId = zoneIds[Math.floor(Math.random() * zoneIds.length)];
 
-  // Create the script element dynamically
-  var scriptElement = document.createElement('script');
-  scriptElement.src = selectedAdScript + '" async data-cfasync="false';
-  
-  // Append the script to the document head to load it
-  document.head.appendChild(scriptElement);
+        // Log the selected zone ID to the console
+        console.log("Loaded ad zone: " + randomZoneId);
 
-  // Create an <h1> element to display the selected index
-  var h1Element = document.createElement('h1');
-  h1Element.textContent = 'Loaded Ad Script Index: ' + randomIndex;
-  
-  // Append the <h1> to the body (or anywhere on your page)
-  document.body.appendChild(h1Element);
-</script>
+        // Optionally, display the selected zone on the page
+        const zoneMessage = document.getElementById('zone-message');
+        zoneMessage.textContent = "The selected ad zone is: " + randomZoneId;
+
+        // Create the ad script element dynamically
+        const adScript = document.createElement('script');
+        adScript.src = 'https://alwingulla.com/88/tag.min.js';
+        adScript.setAttribute('data-zone', randomZoneId);
+        adScript.setAttribute('async', 'true');
+        adScript.setAttribute('data-cfasync', 'false');
+
+        // Append the script to the body
+        document.body.appendChild(adScript);
+    </script>
+
+
+
+    
 
 
 </body>
