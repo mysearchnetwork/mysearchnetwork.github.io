@@ -65,5 +65,45 @@
         // Display a random verse when the page loads
         displayVerse();
     </script>
+
+
+
+    
+    <script>
+  // List of all ad scripts with different zones
+  var adScripts = [
+    'https://alwingulla.com/88/tag.min.js" data-zone="112447',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112446',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112445',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112444',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112443',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112440',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112441',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112442',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112436',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112437',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112438',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112439',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112432',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112433',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112434',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112435',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112412',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112429',
+    'https://alwingulla.com/88/tag.min.js" data-zone="112431'
+  ];
+
+  // Randomly select one ad script from the list
+  var randomIndex = Math.floor(Math.random() * adScripts.length);
+  var selectedAdScript = adScripts[randomIndex];
+
+  // Create the script element dynamically
+  var scriptElement = document.createElement('script');
+  scriptElement.src = selectedAdScript + '" async data-cfasync="false';
+  
+  // Append the script to the document head to load it
+  document.head.appendChild(scriptElement);
+</script>
+
 </body>
 </html>
