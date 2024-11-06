@@ -33,28 +33,7 @@
 </head>
 <body>
     <div>
-        <h1>Random Bible Verse</h1>
-        <div class="quote" id="quote"></div>
+        <div class="quote" id="quote">Be strong and take heart, all you who hope in the Lord. — Psalm 31:24</div>
     </div>
-
-    <script>
-        // Function to fetch random Bible verse
-        async function fetchRandomVerse() {
-            const url = 'https://bible-api.com/random';
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const verse = data.verse;
-                const reference = data.reference;
-                document.getElementById('quote').innerHTML = `<strong>${verse}</strong> <br> <em>- ${reference}</em>`;
-            } catch (error) {
-                console.error("Error fetching Bible verse:", error);
-                document.getElementById('quote').innerHTML = "Sorry, we couldn't fetch a verse right now.";
-            }
-        }
-
-        // Fetch the verse when the page loads
-        fetchRandomVerse();
-    </script>
 </body>
 </html>
