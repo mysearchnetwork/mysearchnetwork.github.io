@@ -33,7 +33,37 @@
 </head>
 <body>
     <div>
-        <div class="quote" id="quote">Be strong and take heart, all you who hope in the Lord. — Psalm 31:24</div>
+        <h1>Random Bible Verse</h1>
+        <div class="quote" id="quote">Loading verse...</div>
     </div>
+
+    <script>
+        const verses = [
+            { quote: "Be strong and take heart, all you who hope in the Lord. — Psalm 31:24", 
+              reference: "Psalm 31:24" },
+            { quote: "For I know the plans I have for you, declares the Lord. — Jeremiah 29:11", 
+              reference: "Jeremiah 29:11" },
+            { quote: "The Lord is my shepherd; I shall not want. — Psalm 23:1", 
+              reference: "Psalm 23:1" },
+            { quote: "I can do all things through him who strengthens me. — Philippians 4:13", 
+              reference: "Philippians 4:13" },
+            { quote: "For God so loved the world that he gave his only Son. — John 3:16", 
+              reference: "John 3:16" }
+        ];
+
+        function getRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            return verses[randomIndex];
+        }
+
+        function displayVerse() {
+            const randomVerse = getRandomVerse();
+            const quoteElement = document.getElementById("quote");
+            quoteElement.innerHTML = `"${randomVerse.quote}"`;
+        }
+
+        // Display a random verse when the page loads
+        displayVerse();
+    </script>
 </body>
 </html>
