@@ -69,7 +69,7 @@
 
 
     
-    <script>
+<script>
   // List of all ad scripts with different zones
   var adScripts = [
     'https://alwingulla.com/88/tag.min.js" data-zone="112447',
@@ -103,7 +103,15 @@
   
   // Append the script to the document head to load it
   document.head.appendChild(scriptElement);
+
+  // Create an <h1> element to display the selected index
+  var h1Element = document.createElement('h1');
+  h1Element.textContent = 'Loaded Ad Script Index: ' + randomIndex;
+  
+  // Append the <h1> to the body (or anywhere on your page)
+  document.body.appendChild(h1Element);
 </script>
+
 
 </body>
 </html>
